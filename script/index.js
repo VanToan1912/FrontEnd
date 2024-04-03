@@ -5,7 +5,7 @@ let boardHeight = 600;
 let context;
 
 //player
-let playerWidth = 80;
+let playerWidth = 500;
 let playerHeight = 10;
 let playerVelocityX = 20;
 
@@ -20,8 +20,8 @@ let player = {
 //ball
 let ballWidth = 10;
 let ballHeight = 10;
-let ballVelocityX = 3;
-let ballVelocityY = 2;
+let ballVelocityX = 15;
+let ballVelocityY = 10;
 
 let ball = {
   x: boardWidth / 2,
@@ -89,9 +89,7 @@ function update() {
   if (topCollison(ball, player) || bottomCollison(ball, player)) {
     ball.velocityY *= -1;
   }
-  if (leftCollison(ball, player) || rightCollison(ball, player)) {
-    ball.velocityX *= -1;
-  }
+  
 
   // ball bouncing
   if (ball.y <= 0) {
@@ -133,6 +131,23 @@ function update() {
     score += 50 * blockRows * blockColumns;
     blockRows = Math.min(blockRows + 1, blockMaxRows);
     createBlocks();
+
+    player = {
+      x: boardWidth / 2 - playerWidth / 2,
+      y: boardHeight - playerHeight - 5,
+      width: playerWidth,
+      height: playerHeight,
+      velocityX: playerVelocityX,
+    };
+  
+    ball = {
+      x: boardWidth / 2,
+      y: boardHeight / 2,
+      width: ballWidth,
+      height: ballHeight,
+      velocityX: ballVelocityX,
+      velocityY: ballVelocityY,
+    };
   }
 
   //scores
