@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="style/styles.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <a href="home.html" class="back">◀</a>
+        <h1 class="title">Level</h1>
+        <table class="stage">
+            <tr>
+                <td><button id="btn-1">1</button></td>
+                <td><button id="btn-2">2</button></td>
+                <td><button id="btn-3">3</button></td>
+            </tr>
+            <tr>
+                <td><button id="btn-4">4</button></td>
+                <td><button id="btn-5">5</button></td>
+                <td><button id="btn-6">6</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <canvas id="board" style="display: none;">
+    </canvas>
+    <div class="game">
+        <button id="refresh" class="back" onclick="window.location.reload();" style="display: none;">◀</button>
+    </div>
+
+    <script src="script/level.js"></script>
+</body>
+
+</html>
