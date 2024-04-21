@@ -1,3 +1,6 @@
+// Trần Văn Toàn
+// DH21DTD
+// 21130572
 $hightLightColor: #40a2d8;
 $normalColor: #f1f1f1;
 $backgroundColor: #414141;
@@ -86,7 +89,7 @@ body {
     }
   }
 
-  #info-panel{
+  #info-panel {
     position: absolute;
     background-color: #878787;
     border: 3px solid $hightLightColor;
@@ -94,19 +97,19 @@ body {
     width: 480px;
     top: 120px;
     left: calc(50% - 240px);
-    
-    h3{
+
+    h3 {
       color: $normalColor;
       font-size: 30px;
       padding: 10px 20px;
     }
 
-    #hide-info{
+    #hide-info {
       background-color: $backgroundColor;
       color: $normalColor;
       border: 1px solid $hightLightColor;
       font-size: 20px;
-      width: 90px;  
+      width: 90px;
       margin-bottom: 5px;
       margin-left: 180px;
       cursor: pointer;

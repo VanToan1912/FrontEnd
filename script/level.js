@@ -1,3 +1,6 @@
+// Trần Văn Toàn
+// DH21DTD
+// 21130572
 let container = document.getElementById("container");
 let refreshbtn = document.getElementById("refresh");
 
@@ -8,7 +11,7 @@ let boardHeight = 650;
 let context;
 
 //players
-let playerWidth = 80; //500 for testing, 80 normal
+let playerWidth = 500; //500 for testing, 80 normal
 let playerHeight = 10;
 let playerVelocityX = 10; //move 10 pixels each time
 
@@ -23,8 +26,8 @@ let player = {
 //ball
 let ballWidth = 10;
 let ballHeight = 10;
-let ballVelocityX = 3; //15 for testing, 3 normal
-let ballVelocityY = 2; //10 for testing, 2 normal
+let ballVelocityX = 6; //15 for testing, 3 normal
+let ballVelocityY = 4; //10 for testing, 2 normal
 
 let ball = {
     x: boardWidth / 2,
@@ -37,10 +40,10 @@ let ball = {
 
 //blocks
 let blockArray = [];
-let blockWidth = 50;
+let blockWidth = 500; //50
 let blockHeight = 10;
-let blockColumns = 8;
-let blockRows = 3; //add more as game goes on
+let blockColumns = 1; //8
+let blockRows = 1; //3 //add more as game goes on
 // let blockMaxRows = 10; //limit how many rows
 let blockCount = 0;
 
@@ -80,8 +83,8 @@ let button4 = document.getElementById("btn-4");
 let button5 = document.getElementById("btn-5");
 let button6 = document.getElementById("btn-6");
 
-[button2, button3, button4, button5, button6].forEach(function(element) {
-    element.addEventListener("click", function() {
+[button2, button3, button4, button5, button6].forEach(function (element) {
+    element.addEventListener("click", function () {
         window.alert("Level chưa được thêm");
     });
 });
@@ -115,8 +118,13 @@ function update() {
     //game ended
     if (blockCount == 0) {
         context.font = "20px sans-serif";
-        context.fillText("You Won!", 210, 400);
-        gameOver = true;
+        context.fillText("Bạn Đã Thắng! Quay Lại Màn Hình Chính", 80, 400);
+        ball.velocityX = 0;
+        ball.velocityY = 0;
+        setTimeout(function () {
+            console.log("Hi")
+            window.location.reload();
+        }, 3000)
     }
 
     //score
@@ -131,10 +139,8 @@ function outOfBounds(xPosition) {
 // Update movePlayer to handle mouse movement
 function movePlayer(e) {
     if (gameOver) {
-        if (e.code == "mouseclick") {
-            resetGame();
-            console.log("RESET");
-        }
+        setTimeout(resetGame(), 3000);
+        console.log("RESET");
         return;
     }
     // Calculate the new player position based on mouse movement
@@ -212,7 +218,7 @@ function handleBallBlockCollision() {
 
 function handleGameOver() {
     context.font = "20px sans-serif";
-    context.fillText("Game Over! Click to Restart.", 80, 400);
+    context.fillText("Bạn Đã Thua. Đợi 3 Giây Để Chơi Lại", 80, 400);
     gameOver = true;
 }
 
