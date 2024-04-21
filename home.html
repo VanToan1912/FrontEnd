@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pong Game</title>
-    <link rel="stylesheet" href="style/styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="title">Pong</h1>
-      <a href="how-to-play.html" id="instruction" class="button"
-        >Hướng Dẫn Chơi</a
-      >
-      <a href="stage-selection.html" id="play" class="button">Chọn Level</a>
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="button">Demo Game</a>
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pong Game</title>
+  <link rel="stylesheet" href="style/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Pong</h1>
+    <a href="how-to-play.html" id="instruction" class="button">Hướng Dẫn Chơi</a>
+    <a href="stage-selection.html" id="play" class="button">Chọn Level</a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="button">Demo Game</a>
+    <button class="button" id="show-info">Thông Tin</button>
+  </div>
+  <div id="info-panel" style="display: none;">
+    <h3>Họ Tên: Trần Văn Toàn</h3>
+    <h3>Khoa: Công Nghệ Thông Tin</h3>
+    <h3>Khóa: 47</h3>
+    <h3>Lớp: DH21DTD</h3>
+    <h3>Mã Số Sinh Viên: 21130572</h3>
+    <button id="hide-info">Quay Lại</button>
+  </div>
+</body>
+
+<script>
+  let infoPanel = document.getElementById("info-panel");
+
+  let showbtn = document.getElementById("show-info");
+  showbtn.addEventListener("click", function () {
+    infoPanel.style.display = "block";
+  });
+
+  let hidebtn = document.getElementById("hide-info");
+  hidebtn.addEventListener("click", function () {
+    infoPanel.style.display = "none";
+  });
+</script>
+
 </html>
